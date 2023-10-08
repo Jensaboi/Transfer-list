@@ -1,10 +1,11 @@
-let list1 = [1,2,3,4]
-let list2 = []
+import { changeList, removeCommonItems, initBtns} from "/service/utilitis.js"
 
-let items = []
+export let list1 = [1,2,3,4]
+export let list2 = []
+export let items = []
 
 
-function renderLists(){
+export function renderLists(){
   list1.sort((a,b) => a - b)
   
   document.getElementById("list1").innerHTML = ""
@@ -51,45 +52,18 @@ function renderLists(){
     document.querySelector(`.label${list2[i]}`).append(checkbox)
   }
 }
-
-
-function changeList(item){
-  if(items.includes(item)){
-    let itemToRemove = items.indexOf(item)
-    items.splice(itemToRemove,1)
-
-  }else{
-    items.push(item)
-  }
-}
-
-function moveToList2(){
-  list2.push(...items)
-  items = []
-  list1 = removeCommonItems(list1 , list2)
-}
-
-function moveToList1(){
+export function moveToList1(){
   list1.push(...items)
   items = []
   list2 = removeCommonItems(list2 , list1)
 }
 
-function removeCommonItems(removeFrom, checkWith){
-  return removeFrom.filter(item => !checkWith.includes(item));
-} 
-
-function initBtns(){
-  document.getElementById("move-to-list2").addEventListener("click", () => {
-    moveToList2()
-    renderLists()
-  })
-
-  document.getElementById("move-to-list1").addEventListener("click", () => {
-    moveToList1()
-    renderLists()
-  })
+export function moveToList2(){
+  list2.push(...items)
+  items = []
+  list1 = removeCommonItems(list1 , list2)
 }
+
 
 initBtns()
 renderLists()
