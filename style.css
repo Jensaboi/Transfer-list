@@ -1,0 +1,63 @@
+  html{
+    background: rgb(18, 14, 43);
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 4em;
+  }
+
+  h1,p{
+    color: white;
+    text-align: center;
+  }
+
+  main{
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  button{
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+  }
+
+  ul{
+    background-color: rgb(238, 238, 238);
+    width: 15%;
+    min-height: 250px;
+    padding: 1em;
+    margin: 0;
+    border-radius: 0.5em;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;   
+  }
